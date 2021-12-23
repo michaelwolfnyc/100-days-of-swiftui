@@ -58,24 +58,27 @@ struct ContentView: View {
                 
                 Section {
                     Text(totalPerPerson, format: localCurrency)
-                        .foregroundColor(Color.red)
+                        .foregroundColor(tipPercentage == 0 ? Color.red : Color.primary)
                 } header: {
                     Text("Each person contributes")
                 } footer: {
                     Text("which includes the tip.")
                 }
             }
-                .navigationTitle("WeSplit")
-                //.toolbar {
-                //    ToolbarItemGroup(placement: .keyboard) {
-                //        HStack {
-                //            Spacer()
-                //            Button("Done With Keyboard") {
-                //                amountIsFocused = false
-                //            }
-                //       }
-                //    }
-                //}
+            //.navigationTitle("WeSplit")
+            // commented out because run-time was crashing
+            // with use of @FocusState
+            /*
+            .toolbar {
+                ToolbarItemGroup(placement: .keyboard) {
+                    HStack {
+                        Spacer()
+                        Button("Done With Keyboard") {
+                            amountIsFocused = false
+                        }
+                    }
+                }
+            }*/
         }
     }
 }

@@ -7,8 +7,17 @@
 
 import SwiftUI
 
+struct FlagRender: View {
+    var image: String
+    var body: some View {
+        Image(image)
+            .renderingMode(.original)
+            .clipShape(RoundedRectangle(cornerRadius: 5))
+            .shadow(radius: 5)
+    }
+}
+
 struct ContentView: View {
-    let boringLayout = false
     let gameLength = 8
     
     @State private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"].shuffled()
@@ -43,26 +52,6 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            if boringLayout {
-                LinearGradient(gradient: Gradient(colors: [.blue, .black]), startPoint: .top, endPoint: .bottom)
-                    .ignoresSafeArea()
-                VStack(spacing: 30) {
-                    VStack {
-                        Text("Tap the flag of").font(.subheadline.weight(.heavy)).font(.largeTitle.weight(.semibold))
-                        Text(countries[correctAnswer])
-                    }.foregroundColor(.white)
-                    ForEach(0..<3) { number in
-                        Button {
-                            scoreIt(number)
-                        } label: {
-                            Image(countries[number])
-                                .renderingMode(.original)
-                                .clipShape(Capsule())
-                                .shadow(radius: 5)
-                        }
-                    }
-                }
-            } else {
                 RadialGradient(stops: [
                     .init(color: Color(red: 0.1, green: 0.2, blue: 0.45), location: 0.3),
                     .init(color: Color(red: 0.76, green: 0.15, blue: 0.26), location: 0.3),
@@ -88,10 +77,7 @@ struct ContentView: View {
                             Button {
                                 scoreIt(number)
                             } label: {
-                                Image(countries[number])
-                                    .renderingMode(.original)
-                                    .clipShape(RoundedRectangle(cornerRadius: 5))
-                                    .shadow(radius: 5)
+                                FlagRender(image: countries[number])
                             }
                         }
                     }.frame(maxWidth: .infinity)
@@ -105,7 +91,6 @@ struct ContentView: View {
                     
                     Spacer()
                 }.padding()
-            }
         }.alert(scoreText, isPresented: $showingScore) {
              Button("OK", role: .none, action: askQuestion)
         }

@@ -22,6 +22,8 @@ struct ContentView: View {
     
     @State private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"].shuffled()
     @State private var correctAnswer = Int.random(in: 0...2)
+    @State private var selectedAnswer: Int? = nil
+    @State private var animationAmount = [0.0, 0.0, 0.0]
     
     @State var nattempts = 0
     @State var ncorrect = 0
@@ -31,9 +33,13 @@ struct ContentView: View {
     func askQuestion() {
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
+        selectedAnswer = nil
     }
     
     func scoreIt(_ number: Int) {
+        selectedAnswer = number
+        withAnimation {animationAmount[number] += 360.0}
+        
         showingScore = true
         nattempts += 1
         if number == correctAnswer {
@@ -78,6 +84,8 @@ struct ContentView: View {
                                 scoreIt(number)
                             } label: {
                                 FlagRender(image: countries[number])
+                                    .rotation3DEffect(.degrees(animationAmount[number]), axis: (x: 0, y: 1, z: 0))
+                                    .opacity(selectedAnswer == nil || selectedAnswer == number ? 1.0 : 0.5)
                             }
                         }
                     }.frame(maxWidth: .infinity)

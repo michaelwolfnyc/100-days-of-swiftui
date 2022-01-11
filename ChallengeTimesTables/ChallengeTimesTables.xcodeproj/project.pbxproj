@@ -19,6 +19,7 @@
 		877B3258278C73D100DAA2C0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		877B325A278C73D200DAA2C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		877B325D278C73D200DAA2C0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		877B3264278DDBDA00DAA2C0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +54,7 @@
 			children = (
 				877B3256278C73D100DAA2C0 /* ChallengeTimesTablesApp.swift */,
 				877B3258278C73D100DAA2C0 /* ContentView.swift */,
+				877B3264278DDBDA00DAA2C0 /* README.md */,
 				877B325A278C73D200DAA2C0 /* Assets.xcassets */,
 				877B325C278C73D200DAA2C0 /* Preview Content */,
 			);

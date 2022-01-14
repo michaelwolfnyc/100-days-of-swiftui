@@ -3,13 +3,16 @@ one for personal expenses, and one for business expenses.
 This is tricky for a few reasons, not least because it means
 being careful about how items are deleted!"
 
-This is the callenge I'll do.
+Failed on this challenge, but I know exactly how to fix it.  The current code
+is the original project, and the commented code is the hard part of the challenge.
+The cool working part is the "filter()" to get only the business or personal
+items.  Also cool is the SectionOFTypeView to print out each sections separately
+with no code duplication.  The broken part is that .onDelete calls removeItems().
+The IndexSet passed in is for the *filtered* list, but then removeItems() deletes
+from the unfiltered list.  It would be easy enough to have removeItems() know
+the type, look at the index set to be deleted for that type, and convert it to
+the index set of the original.  Or, equivalently, filter the original, get the
+UUIDs corresponding to the index set, and delete *those* UUIDs.  I think that's
+cleaner.
 
-Strategy:
-
-I am not so sure why this is hard.  Two choices:
-
-* Maintaining two lists.  A viable option
-* One list, but have two List views, where rows are first only printed for
-  business, then for personal.  Given each item is identifiable, I'm not sure
-  why deleting is an issue.  Let's find out.
+In any case, good enough for now.

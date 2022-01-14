@@ -68,6 +68,63 @@ struct ContentView: View {
         }
     }
 }
+ 
+/*
+struct SectionOfTypeView: View {
+    var theType: String
+    @ObservedObject var expenses: Expenses
+    
+    func removeItems(at offsets: IndexSet) {
+        expenses.items.remove(atOffsets: offsets)
+    }
+
+    var body: some View {
+        Section(theType) {
+            // WRONG!! The filter works, cool, but then the item that's deleted
+            // has the index from the filtered list!  See README.
+            ForEach(expenses.items.filter(){$0.type==theType}) { item in
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text(item.name)
+                            .font(.headline)
+                        //Text(item.type)
+                    }
+                    Spacer()
+                    Text(item.amount, format: .currency(code: "USD"))
+                }
+            }.onDelete(perform: removeItems)
+        }
+    }
+}
+
+
+struct ContentView: View {
+    func removeItems(at offsets: IndexSet) {
+        expenses.items.remove(atOffsets: offsets)
+    }
+    @StateObject var expenses = Expenses()
+    @State private var showingAddExpense = false
+    
+    var body: some View {
+        NavigationView {
+            List {
+                SectionOfTypeView(theType: "Personal", expenses: expenses)
+                SectionOfTypeView(theType: "Business", expenses: expenses)
+            }
+            .navigationTitle("iExpense")
+            .toolbar {
+                Button {
+                    showingAddExpense = true
+                } label: {
+                    Image(systemName: "plus")
+                }
+            }
+        }.sheet(isPresented: $showingAddExpense) {
+            AddView(expenses: expenses)
+        }
+    }
+}
+*/
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

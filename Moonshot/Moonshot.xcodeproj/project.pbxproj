@@ -19,6 +19,7 @@
 		874870FB279528DF001D77B2 /* Color-Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874870FA279528DF001D77B2 /* Color-Theme.swift */; };
 		874870FD2795B7D3001D77B2 /* MissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874870FC2795B7D3001D77B2 /* MissionView.swift */; };
 		874870FF2795BE36001D77B2 /* AstronautView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874870FE2795BE36001D77B2 /* AstronautView.swift */; };
+		8748710127963A0D001D77B2 /* BetterSpacer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8748710027963A0D001D77B2 /* BetterSpacer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		874870FA279528DF001D77B2 /* Color-Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color-Theme.swift"; sourceTree = "<group>"; };
 		874870FC2795B7D3001D77B2 /* MissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionView.swift; sourceTree = "<group>"; };
 		874870FE2795BE36001D77B2 /* AstronautView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronautView.swift; sourceTree = "<group>"; };
+		8748710027963A0D001D77B2 /* BetterSpacer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterSpacer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			children = (
 				874870F427940066001D77B2 /* Astronaut.swift */,
 				874870FE2795BE36001D77B2 /* AstronautView.swift */,
+				8748710027963A0D001D77B2 /* BetterSpacer.swift */,
 				874870F627940293001D77B2 /* Bundle-Decodable.swift */,
 				874870FA279528DF001D77B2 /* Color-Theme.swift */,
 				874870E22791FCFE001D77B2 /* ContentView.swift */,
@@ -170,6 +173,7 @@
 				874870F527940066001D77B2 /* Astronaut.swift in Sources */,
 				874870E12791FCFE001D77B2 /* MoonshotApp.swift in Sources */,
 				874870F927940369001D77B2 /* Mission.swift in Sources */,
+				8748710127963A0D001D77B2 /* BetterSpacer.swift in Sources */,
 				874870F727940293001D77B2 /* Bundle-Decodable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

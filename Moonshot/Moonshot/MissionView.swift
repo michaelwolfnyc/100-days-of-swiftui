@@ -12,7 +12,7 @@ struct CrewMember {
     let astronaut: Astronaut
 }
 
-struct HorizontalScrollViewForMission: View {
+struct HorizontalScrollViewForCrewMembers: View {
     let crew: [CrewMember]
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -44,7 +44,14 @@ struct HorizontalScrollViewForMission: View {
                 }
             }
         }
+    }
+}
 
+struct ListViewForMission: View {
+    let crew: [CrewMember]
+    var body: some View {
+        ScrollView(.vertical, showsIndicators: false) {
+        }
     }
 }
 
@@ -97,7 +104,7 @@ struct MissionView: View {
                     }
                     .padding(.horizontal)
 
-                    HorizontalScrollViewForMission(crew: crew)
+                    HorizontalScrollViewForCrewMembers(crew: crew)
                     
                 }
                 .padding(.bottom)

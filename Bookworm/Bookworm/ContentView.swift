@@ -9,7 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) var moc
-    @FetchRequest(sortDescriptors: []) var books: FetchedResults<Book>
+    @FetchRequest(sortDescriptors: [
+        SortDescriptor(\.author),SortDescriptor(\.title),
+    ]) var books: FetchedResults<Book>
 
     @State private var showingAddScreen = false
     
@@ -34,9 +36,10 @@ struct ContentView: View {
                                 .font(.largeTitle)
 
                             VStack(alignment: .leading) {
-                                Text(book.title ?? "Unknown Title")
+                                Text(book.title!)
                                     .font(.headline)
-                                Text(book.author ?? "Unknown Author")
+                                    .foregroundColor(book.rating > 1 ? .black : .red)
+                                Text(book.author!)
                                     .foregroundColor(.secondary)
                             }
                         }

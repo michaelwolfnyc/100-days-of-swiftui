@@ -31,6 +31,7 @@
 		8736DA8027A791940037BDCE /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		8736DA8227A795610037BDCE /* EmojiRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiRatingView.swift; sourceTree = "<group>"; };
 		8736DA8427A796580037BDCE /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		8736DA8627A832990037BDCE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +68,7 @@
 				8736DA6B27A616780037BDCE /* BookwormApp.swift */,
 				8736DA7927A65A9B0037BDCE /* Bookworm.xcdatamodeld */,
 				8736DA7127A6167A0037BDCE /* Preview Content */,
+				8736DA8627A832990037BDCE /* README.md */,
 				8736DA7E27A75D610037BDCE /* AddBookView.swift */,
 				8736DA6D27A616780037BDCE /* ContentView.swift */,
 				8736DA7C27A65C430037BDCE /* DataController.swift */,

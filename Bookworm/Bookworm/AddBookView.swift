@@ -19,6 +19,10 @@ struct AddBookView: View {
     
     let genres = ["Fantasy", "Horror", "Kids", "Mystery", "Poetry", "Romance", "Thriller"]
     
+    var validEntry: Bool {
+        title != "" && author != "" && genre != ""
+    }
+    
     var body: some View {
         NavigationView {
             Form {
@@ -41,17 +45,25 @@ struct AddBookView: View {
                 }
 
                 Section {
-                    Button("Save") {
-                        let newBook = Book(context: moc)
-                        newBook.id = UUID()
-                        newBook.title = title
-                        newBook.author = author
-                        newBook.rating = Int16(rating)
-                        newBook.genre = genre
-                        newBook.review = review
-
-                        try? moc.save()
-                        dismiss()
+                    HStack {
+                        Spacer()
+                        Button("Save") {
+                            let newBook = Book(context: moc)
+                            newBook.id = UUID()
+                            newBook.title = title
+                            newBook.author = author
+                            newBook.rating = Int16(rating)
+                            newBook.genre = genre
+                            newBook.review = review
+                            
+                            try? moc.save()
+                            dismiss()
+                        }.disabled(!validEntry)
+                        Spacer()
+                        Button("Cancel") {
+                            dismiss()
+                        }
+                        Spacer()
                     }
                 }
             }
